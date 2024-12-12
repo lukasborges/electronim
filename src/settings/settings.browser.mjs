@@ -45,7 +45,8 @@ const Settings = ({initialState}) => {
     theme: state.theme,
     trayEnabled: state.trayEnabled,
     startMinimized: state.startMinimized,
-    closeButtonBehavior: state.closeButtonBehavior
+    closeButtonBehavior: state.closeButtonBehavior,
+    verticalTabsEnabled: state.verticalTabsEnabled
   });
   const cancel = () => ipcRenderer.send(APP_EVENTS.closeDialog);
   return html`
@@ -98,7 +99,8 @@ Promise.all([
       theme: currentSettings.theme,
       trayEnabled: currentSettings.trayEnabled,
       startMinimized: currentSettings.startMinimized,
-      closeButtonBehavior: currentSettings.closeButtonBehavior
+      closeButtonBehavior: currentSettings.closeButtonBehavior,
+      verticalTabsEnabled: currentSettings.verticalTabsEnabled
     };
     render(html`<${Settings} initialState=${initialState} />`, settingsRoot());
   }
