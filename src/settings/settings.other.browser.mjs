@@ -73,6 +73,13 @@ export const OtherPane = ({dispatch, state}) => {
           checked=${state.startMinimized}
           onClick=${toggleProperty({dispatch, property: 'startMinimized'})}
       />
+      <${SettingsOption}
+          className='settings__vertical-tabs'
+          label='Vertical tabs'
+          icon=${Icon.verticalTabs}
+          checked=${state.verticalTabsEnabled}
+          onClick=${toggleProperty({dispatch, property: 'verticalTabsEnabled'})}
+      />
       <${Card.Divider} />
       <div data-testid='settings-electronim-version'>
         ElectronIM version ${ELECTRONIM_VERSION}
